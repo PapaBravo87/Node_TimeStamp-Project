@@ -1,7 +1,7 @@
 {
 	"name": "prabodh-bharose-portfolio-app",
 	"version": "0.0.1",
-	"description": "A Portfolio on a boilerplate by FCC",
+	"description": "An FCC Backend Challenge",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
