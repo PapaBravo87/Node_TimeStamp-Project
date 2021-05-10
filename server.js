@@ -25,10 +25,20 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+app.get("/api/timestamp/", (req, res) => {
+  res.json({ unix: Date.now(), utc: Date() });
+});
+
+
+app.get("/api/", (req,res) => {
+  res.json({unix: Date.now(), utc: new Date()});
+});
+
 app.get("/api/:timestamp?", (req, res) => {
     let dateString = req.params.timestamp;
+    
   //A 4 digit number is a valid ISO-8601 for the beginning of that year
-  //5 digits or more must be a unix time, until we reach a year 10,000 problem
+  //5 digits or more must be a unix time, until we reach a year 10,000 problem 
   if (/\d{5,}/.test(dateString)) {
     const dateInt = parseInt(dateString);
     //Date regards numbers as unix timestamps, strings are processed differently
